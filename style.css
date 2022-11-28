@@ -1,3 +1,10 @@
+:root {
+    --size_small: 14px;
+    --size_med: 18px;
+    --size_large: 22px;
+    --color: #ffffff;
+}
+
 h1 {
-    font-size: large;
+    font-size:var(--size_large)
 }
