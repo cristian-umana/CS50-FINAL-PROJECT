@@ -1,2 +1,8 @@
 Since I don't have iMessage on my dumb pc
 This is what I've come up with to send links / code to you 
+
+live share session, idk how to get this to work
+https://prod.liveshare.vsengsaas.visualstudio.com/join?38B9C28369119AFF0BD854FA5B93E3A1E5AC
+
+Repository SSH 
+git@github.com:cristian-umana/CS50-FINAL-PROJECT.git
