@@ -1,6 +1,7 @@
 CREATE TABLE users (
                     id INTEGER,
                     username TEXT NOT NULL,
+                    /* password TEXT NOT NULL, ??? probably not bc too complicated*/ 
                     PRIMARY KEY(id)
                 );
 
@@ -14,7 +15,7 @@ CREATE TABLE post (
                     FOREIGN KEY(user_id) REFERENCES users(id)
                 );
 
-CREATE TABLE advice (
+CREATE TABLE reply (
                     reply_id INTEGER,
                     user_id TEXT NOT NULL,
                     reply_entry TEXT NOT NULL,
