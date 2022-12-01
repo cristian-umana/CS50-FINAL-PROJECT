@@ -5,7 +5,6 @@ CREATE TABLE users (
                     PRIMARY KEY(id)
                 );
 
-
 CREATE TABLE post (
                     post_id INTEGER,
                     post_author TEXT NOT NULL,
