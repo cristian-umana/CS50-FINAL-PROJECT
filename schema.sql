@@ -1,12 +1,10 @@
-/* 
 CREATE TABLE users (
                     id INTEGER,
                     username TEXT NOT NULL,
+                    password text NOT NULL,
                     PRIMARY KEY(id)
                 );
 
-                what if we just have this in the post / reply? 
-*/
 
 CREATE TABLE post (
                     post_id INTEGER,
@@ -15,6 +13,7 @@ CREATE TABLE post (
                     post_time NUMERIC,
                     post_replyability text,
                     PRIMARY KEY(post_id),
+                    FOREIGN KEY(post_author) REFERENCES users(id)
                 );
 
 CREATE TABLE reply (
@@ -25,6 +24,7 @@ CREATE TABLE reply (
                     post_id INTEGER,
                     PRIMARY KEY(reply_id),
                     FOREIGN KEY(post_id) REFERENCES post(post_id),
+                    FOREIGN KEY(reply_author) REFERENCES users(id)
                 );
 
 CREATE TABLE tags (
