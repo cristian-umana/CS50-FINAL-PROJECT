@@ -42,7 +42,17 @@ def tell():
 
 @app.route("/tell_story", methods=["GET", "POST"])
 def tell_story():
-    return render_template("tell_story.html")
+
+    if request.method == "POST":
+
+        story = request.form.get("tell_story")
+
+        db.execute("INSERT INTO post(post_entry) VALUES(?)", request.form.get("tell_story"))
+
+        return render_template("tell_story.html", story=story)
+
+    else:
+        return render_template("tell_story.html")
 
 
 @app.route("/tell_advice", methods=["GET", "POST"])
