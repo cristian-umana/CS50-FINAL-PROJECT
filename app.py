@@ -28,6 +28,12 @@ def listen():
     #things go here
     return render_template("listen.html")
 
+@app.route("/tell")
+def tell():
+    #things go here
+    return render_template("tell.html")
+
+
 #@app.route("/tell", methods=["GET", "POST"])
 #def tell():
     #things go here
