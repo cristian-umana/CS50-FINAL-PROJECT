@@ -21,39 +21,57 @@ db = SQL("sqlite:///posts.db")
 
 @app.route("/")
 def launch():
-    #things go here
+
     return render_template("launch.html")
 
 @app.route("/listen")
 def listen():
-    #things go here
+    
     stories = db.execute("SELECT * FROM post ORDER BY post_time")
 
-    return render_template("listen.html", stories=stories)
+    advice = db.execute("SELECT * FROM reply ORDER BY post_time")
+
+    return render_template("listen.html", stories=stories, advice=advice)
 
 
-@app.route("/tell", methods=["GET", "POST"])
+@app.route("/tell")
 def tell():
-    #things go here
+
+    return render_template("tell.html")
+
+
+@app.route("/tell_story", methods=["GET", "POST"])
+def tell_story():
+    return render_template("tell_story.html")
+
+
+@app.route("/tell_advice", methods=["GET", "POST"])
+def tell_advice():
+
     if request.method == "POST":
 
-        story = request.form.get("tell")
+        story = request.form.get("tell_advice")
 
-        db.execute("INSERT INTO post(post_entry) VALUES(?)", request.form.get("tell"))
+        db.execute("INSERT INTO reply(reply_entry) VALUES(?)", request.form.get("tell_advice"))
 
-        return render_template("tell.html", story=story)
+        return render_template("tell_advice.html", story=story)
 
     else:
-        return render_template("tell.html")
+        return render_template("tell_advice.html")
 
 
-#@app.route("/tell", methods=["GET", "POST"])
-#def tell():
-    #things go here
-#    return render_template("tell.html")
 
-#@app.route("/listen", methods=["GET", "POST"])
-#@login_required
-#def listen():
-    #things go here
-#    return render_template("listen.html")
+@app.route("/listen_story", methods=["GET", "POST"])
+def listen_story():
+
+    stories = db.execute("SELECT * FROM post ORDER BY post_time")
+
+    return render_template("listen_story.html", stories=stories)
+
+
+@app.route("/listen_advice", methods=["GET", "POST"])
+def listen_advice():
+
+    advice = db.execute("SELECT * FROM reply ORDER BY post_time")
+
+    return render_template("listen_advice.html", advice=advice)
