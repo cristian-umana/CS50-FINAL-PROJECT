@@ -3,7 +3,7 @@ CREATE TABLE post (
                     post_entry TEXT NOT NULL,
                     post_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                     post_replyability text,
-                    PRIMARY KEY(post_id AUTOINCREMENT),
+                    PRIMARY KEY(post_id AUTOINCREMENT)
                 );
 
 CREATE TABLE reply (
@@ -12,7 +12,7 @@ CREATE TABLE reply (
                     reply_entry TEXT NOT NULL,
                     reply_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                     PRIMARY KEY(reply_id AUTOINCREMENT),
-                    FOREIGN KEY(post_id) REFERENCES post(post_id),
+                    FOREIGN KEY(post_id) REFERENCES post(post_id)
                 );
 
 CREATE TABLE tags (
