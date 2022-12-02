@@ -2,12 +2,12 @@
 
 {% block title %}
     <!-- PAGE TITLE -->
-    REPLY
+    LISTEN
 {% endblock %}
 
 {% block main %}
 
-<!-- CODE FOR REPLY PAGE HERE -->
+<!-- TWO TABLES, LOG OF STORIES (POSTS) AND ADVICE (REPLIES) -->
 
 <table>
     <thead>
@@ -21,6 +21,23 @@
         <tr>
             <td>{{ i.post_time }}</td>
             <td>{{ i.post_entry }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+        <th>DATE</th>
+        <th>ADVICE</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in advice %}
+        <tr>
+            <td>{{ i.reply_time }}</td>
+            <td>{{ i.reply_entry }}</td>
         </tr>
         {% endfor %}
     </tbody>

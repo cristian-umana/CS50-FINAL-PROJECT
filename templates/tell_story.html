@@ -2,16 +2,16 @@
 
 {% block title %}
     <!-- PAGE TITLE -->
-    POST
+    TELL | STORY
 {% endblock %}
 
 {% block main %}
 
-<!-- CODE FOR REPLY PAGE HERE -->
+<!-- FORM TO INSERT TEXT INTO POST TABLE -->
 
-<form action="/tell" method="post">
+<form action="/tell_story" method="post">
     <div class="mb-3">
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="tell" name="tell" placeholder="Tell Me About It" type="text">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="tell_story" name="tell_story" placeholder="Tell Me About It" type="text">
     </div>
     <button class="btn btn-primary" type="submit">Send Your Feelings to The Ether!</button>
 </form>

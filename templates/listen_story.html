@@ -1,25 +1,25 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    LISTEN | ADVICE
+    LISTEN | STORIES
 {% endblock %}
 
 {% block main %}
 
-<!-- DISPLAYS LOG OF ADVICE (REPLIES) FILTERED BY TAGS -->
+<!-- DISPLAYS LOG OF STORIES (POSTS) FILTERED BY TAGS -->
 
 <table>
     <thead>
         <tr>
         <th>DATE</th>
-        <th>ADVICE</th>
+        <th>STORY</th>
         </tr>
     </thead>
     <tbody>
-        {% for i in advice %}
+        {% for i in stories %}
         <tr>
-            <td>{{ i.reply_time }}</td>
-            <td>{{ i.reply_entry }}</td>
+            <td>{{ i.post_time }}</td>
+            <td>{{ i.post_entry }}</td>
         </tr>
         {% endfor %}
     </tbody>
