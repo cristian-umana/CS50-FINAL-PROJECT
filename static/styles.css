@@ -13,6 +13,10 @@ body {
     font-family: 'andale mono', monospace;
 }
 
+a {
+    text-decoration: none;
+}
+
 nav {
     display: inline-block;
     text-decoration: none;
