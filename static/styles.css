@@ -3,6 +3,10 @@ h1 {
 	color: orange;
 }
 
+a {
+    display: inline;
+}
+
 
 
 /* VARIABLE THING! */
