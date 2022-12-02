@@ -29,7 +29,7 @@ def listen():
     
     stories = db.execute("SELECT * FROM post ORDER BY post_time")
 
-    advice = db.execute("SELECT * FROM reply ORDER BY post_time")
+    advice = db.execute("SELECT * FROM reply ORDER BY reply_time")
 
     return render_template("listen.html", stories=stories, advice=advice)
 
