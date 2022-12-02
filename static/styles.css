@@ -1,10 +1,43 @@
 
 h1 {
-	color: orange;
+	color: rgb(106, 164, 166);
 }
 
-a {
-    display: inline;
+body {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'andale mono', monospace;
+}
+
+nav {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.nav-link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 40%;
+    color: rgb(193, 192, 192);
+}
+
+.button_container {
+    text-align: center;
+    padding: 40px;
+}
+
+.btn {
+    font-size: 80%;
+    font-style: bold;
+    color: #d44e4e;
+    background: none;
+    border-color: #d44e4e;
+    border-style: solid;
+
 }
 
 
