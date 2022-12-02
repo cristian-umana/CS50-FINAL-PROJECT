@@ -8,6 +8,12 @@
 {% block main %}
 
 <!-- CODE FOR REPLY PAGE HERE -->
-POST POST POST
+
+<form action="/tell" method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="tell" name="tell" placeholder="Tell Me About It" type="text">
+    </div>
+    <button class="btn btn-primary" type="submit">Send Your Feelings to The Ether!</button>
+</form>
 
 {% endblock %}

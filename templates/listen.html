@@ -8,6 +8,24 @@
 {% block main %}
 
 <!-- CODE FOR REPLY PAGE HERE -->
-REPLY REPLY REPLY
+
+<table>
+    <thead>
+        <tr>
+        <th>DATE</th>
+        <th>STORY</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in stories %}
+        <tr>
+            <td>{{ i.time_stamp }}</td>
+            <td>{{ i.stock_symbol }}</td>
+            <td>{{ i.shares }}</td>
+            <td>{{ i.price | usd }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
