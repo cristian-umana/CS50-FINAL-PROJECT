@@ -27,7 +27,7 @@ def launch():
 @app.route("/listen")
 def listen():
     #things go here
-    stories = db.execute("SELECT * FROM post ORDER BY time_stamp")
+    stories = db.execute("SELECT * FROM post ORDER BY post_time")
 
     return render_template("listen.html", stories=stories)
 
@@ -39,10 +39,10 @@ def tell():
 
         story = request.form.get("tell")
 
-        db.execute("UPDATE post SET post_entry=? WHERE post_author = ?", story, session["user_id"])
+        db.execute("INSERT INTO post(post_entry)", request.form.get("tell"))
 
     else:
-        return render_template("tell.html")
+        return render_template("tell.html", story=story)
 
 
 #@app.route("/tell", methods=["GET", "POST"])
