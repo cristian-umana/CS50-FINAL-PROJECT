@@ -39,10 +39,12 @@ def tell():
 
         story = request.form.get("tell")
 
-        db.execute("INSERT INTO post(post_entry)", request.form.get("tell"))
+        db.execute("INSERT INTO post(post_entry) VALUES(?)", request.form.get("tell"))
+
+        return render_template("tell.html", story=story)
 
     else:
-        return render_template("tell.html", story=story)
+        return render_template("tell.html")
 
 
 #@app.route("/tell", methods=["GET", "POST"])
