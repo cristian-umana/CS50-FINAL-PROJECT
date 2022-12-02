@@ -26,18 +26,19 @@ nav {
 }
 
 .button_container {
+    text-decoration: none;
     text-align: center;
     padding: 40px;
 }
 
 .btn {
+    text-decoration: none;
     font-size: 80%;
     font-style: bold;
     color: #d44e4e;
     background: none;
     border-color: #d44e4e;
     border-style: solid;
-
 }
 
 
