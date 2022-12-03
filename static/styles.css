@@ -4,10 +4,6 @@ h1 {
 }
 
 body {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
     text-align: center;
     text-decoration: none;
     font-family: 'andale mono', monospace;
@@ -53,8 +49,11 @@ table {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
-    text-align: center;
+    width: 35%;
+}
+
+th {
+    padding: 20px;
 }
 
 
