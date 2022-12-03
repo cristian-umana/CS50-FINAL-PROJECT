@@ -105,8 +105,4 @@ def listen_advice():
    
     advice = db.execute("SELECT * FROM reply JOIN tags ON reply.reply_id = tags.reply_id WHERE tags.tag = ? ORDER BY reply_time", tags)
 
-    x = db.execute("SELECT tag FROM tags WHERE reply_id = ?", )
-
-
-
     return render_template("listen_advice.html", advice=advice)
