@@ -70,6 +70,8 @@ def tell_advice():
 
         tags = request.form.getlist("tell_tags")
 
+        print(tags)
+
         db.execute("INSERT INTO reply(reply_entry) VALUES(?)", request.form.get("tell_advice"))
 
         id = db.execute("SELECT reply_id FROM reply WHERE reply_entry = ?", story)[0]["reply_id"]
