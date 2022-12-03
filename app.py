@@ -47,7 +47,13 @@ def tell_story():
 
         story = request.form.get("tell_story")
 
+        tags = request.form.get("tell_tags")
+
         db.execute("INSERT INTO post(post_entry) VALUES(?)", request.form.get("tell_story"))
+
+        id = db.execute("SELECT post_id FROM post WHERE post_entry = ?", story)[0]["post_id"]
+
+        db.execute("INSERT INTO tags(post_id, tag) VALUES(?, ?)", id, tags)
 
         return render_template("tell_story.html", story=story)
 
