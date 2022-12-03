@@ -62,7 +62,20 @@ def tell_advice():
 
         story = request.form.get("tell_advice")
 
-        db.execute("INSERT INTO reply(reply_entry) VALUES(?)", request.form.get("tell_advice"))
+        tags = request.form.get("tell_tags")
+
+        #INSERT INTO reply(reply_entry), name FROM artist JOIN artist_tag USING (artist_id) WHERE tag IN ('60s', '70s', '80s’);
+
+        db.execute("INSERT INTO reply(reply_entry) VALUES(?)", request.form.get("tell_advice")) 
+
+        #db.execute("INSERT INTO tags(reply_id, tag) VALUES(?, ?)", , request.form.get("tell_tag"))
+
+        #db.execute("INSERT INTO tags (reply_id, tag) SELECT reply.reply_id FROM reply INNER JOIN tags ON reply.reply_id = tags.reply_id VALUES (?, ?)", (SELECT reply_id FROM reply WHERE reply_entry = 'story'), request.form.get("tell_advice"))
+
+        db.execute("INSERT INTO tags (reply_id, tag) VALUES (?, ?)", db.execute("SELECT reply_id FROM reply WHERE reply_entry = ?", story), request.form.get("tell_advice"))
+
+#INSERT INTO Orders ( userid, timestamp) 
+#SELECT Orders.userid, Orders.timestamp FROM Users INNER JOIN Orders ON  Orders.id = Users.id
 
         return render_template("tell_advice.html", story=story)
 
