@@ -68,7 +68,7 @@ def tell_advice():
 
         story = request.form.get("tell_advice")
 
-        tags = request.form.getlist("tell_tags")
+        tags = request.form.getlist('tell_tags')
 
         print(tags)
 
