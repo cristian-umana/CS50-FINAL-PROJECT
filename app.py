@@ -88,6 +88,6 @@ def listen_story():
 @app.route("/listen_advice", methods=["GET", "POST"])
 def listen_advice():
 
-    advice = db.execute("SELECT * FROM reply ORDER BY reply_time")
+    advice = db.execute("SELECT reply_id, reply_time, tag FROM reply JOIN tags ON reply.reply_id = tags.reply_id ORDER BY reply_time")
 
     return render_template("listen_advice.html", advice=advice)
