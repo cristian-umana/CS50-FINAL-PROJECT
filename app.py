@@ -86,8 +86,9 @@ def tell_advice():
 @app.route("/listen_story", methods=["GET", "POST"])
 def listen_story():
 
-    stories = db.execute("SELECT * FROM post JOIN tags ON post.post_id = tags.post_id ORDER BY post_time")
+    tags = request.form.get("listen_tags")
 
+    stories = db.execute("SELECT * FROM post JOIN tags ON post.post_id = tags.post_id WHERE tags.tag = ? ORDER BY post_time", tags)
 
     return render_template("listen_story.html", stories=stories)
 
