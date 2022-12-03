@@ -76,8 +76,8 @@ def tell_advice():
 
         id = db.execute("SELECT reply_id FROM reply WHERE reply_entry = ?", story)[0]["reply_id"]
 
-        for tag in tags: 
-             db.execute("INSERT INTO tags(reply_id, tag) VALUES(?, ?)", id, tags[tag])
+        for i in tags: 
+             db.execute("INSERT INTO tags(reply_id, tag) VALUES(?, ?)", id, tags[i])
 
         return render_template("tell_advice.html", story=story)
 
