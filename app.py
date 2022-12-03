@@ -47,7 +47,7 @@ def tell_story():
 
         story = request.form.get("tell_story")
 
-        tags = request.form.get("tell_tags")
+        tags = request.form.getlist("tell_tags")
 
         db.execute("INSERT INTO post(post_entry) VALUES(?)", request.form.get("tell_story"))
 
@@ -68,13 +68,14 @@ def tell_advice():
 
         story = request.form.get("tell_advice")
 
-        tags = request.form.get("tell_tags")
+        tags = request.form.getlist("tell_tags")
 
         db.execute("INSERT INTO reply(reply_entry) VALUES(?)", request.form.get("tell_advice"))
 
         id = db.execute("SELECT reply_id FROM reply WHERE reply_entry = ?", story)[0]["reply_id"]
 
-        db.execute("INSERT INTO tags(reply_id, tag) VALUES(?, ?)", id, tags)
+        for tag in tags: 
+             db.execute("INSERT INTO tags(reply_id, tag) VALUES(?, ?)", id, tags[tag])
 
         return render_template("tell_advice.html", story=story)
 
