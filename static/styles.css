@@ -32,7 +32,7 @@ nav {
 .button_container {
     text-decoration: none;
     text-align: center;
-    padding: 40px;
+    padding: 100px;
 }
 
 .btn {
@@ -43,6 +43,10 @@ nav {
     background: none;
     border-color: #d44e4e;
     border-style: solid;
+}
+
+.btn tag {
+    padding: 20px;
 }
 
 
