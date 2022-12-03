@@ -70,7 +70,9 @@ def tell_advice():
 
         tags = request.form.getlist('tell_tags')
 
-        print(tags)
+        #print(tags)
+
+        ['a', 'b']
 
         db.execute("INSERT INTO reply(reply_entry) VALUES(?)", request.form.get("tell_advice"))
 
@@ -99,8 +101,12 @@ def listen_story():
 @app.route("/listen_advice", methods=["GET", "POST"])
 def listen_advice():
 
-    tags = request.form.get("listen_tags")
-
+    tags = str(request.form.getlist("listen_tags"))
+   
     advice = db.execute("SELECT * FROM reply JOIN tags ON reply.reply_id = tags.reply_id WHERE tags.tag = ? ORDER BY reply_time", tags)
+
+    x = db.execute("SELECT tag FROM tags WHERE reply_id = ?", )
+
+
 
     return render_template("listen_advice.html", advice=advice)
