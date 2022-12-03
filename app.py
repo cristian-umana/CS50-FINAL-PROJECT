@@ -62,7 +62,13 @@ def tell_advice():
 
         story = request.form.get("tell_advice")
 
+        tags = request.form.get("tell_tags")
+
         db.execute("INSERT INTO reply(reply_entry) VALUES(?)", request.form.get("tell_advice"))
+
+        id = db.execute("SELECT reply_id FROM reply WHERE reply_entry = ?", story)[0]["reply_id"]
+
+        db.execute("INSERT INTO tags(reply_id, tag) VALUES(?, ?)", id, request.form.get("tell_advice"))
 
         return render_template("tell_advice.html", story=story)
 
