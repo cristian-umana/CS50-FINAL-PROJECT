@@ -12,19 +12,8 @@
 <form action="/tell_story" method="post">
     <div class="mb-3">
         <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="tell_story" name="tell_story" placeholder="Tell Me About It" type="text">
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="tell_tags" name="tell_tags" placeholder="tag it!" type="text">
-    </div>
-    <div>
-    </div class="button_container">
-        <button class="btn tag" type="submit">relationships</button>
-        <button class="btn tag" type="submit">friendships</button>
-        <button class="btn tag" type="submit">career</button>
-        <button class="btn tag" type="submit">love</button>
-        <button class="btn tag" type="submit">loss</button>
-        <button class="btn tag" type="submit">confusion</button>
-        <button class="btn tag" type="submit">personal growth</button>
-        <button class="btn tag" type="submit">conflict</button>
-        <button class="btn tag" type="submit">guilt</button>
+        <input type="checkbox" value="sad" id="tell_tags" name="tell_tags"> 
+        <label for="tell_tags">sad</label>
     </div>
     <div class="button_container">
         <button class="btn btn-primary" type="submit">Send Your Feelings to The Ether!</button>
