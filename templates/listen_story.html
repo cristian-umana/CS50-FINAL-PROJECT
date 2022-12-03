@@ -8,11 +8,20 @@
 
 <!-- DISPLAYS LOG OF STORIES (POSTS) FILTERED BY TAGS -->
 
+<form action="/listen_story" method="post">
+    <div class="mb-3">
+        <input type="checkbox" value="sad" id="listen_tags" name="listen_tags"> 
+        <label for="listen_tags">sad</label>
+    </div>
+    <button class="btn btn-primary" type="submit">See Stories</button>
+</form>
+
 <table>
     <thead>
         <tr>
         <th>DATE</th>
         <th>STORY</th>
+        <th>TAGS</th>
         </tr>
     </thead>
     <tbody>
