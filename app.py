@@ -99,8 +99,8 @@ def listen_story():
 @app.route("/listen_advice", methods=["GET", "POST"])
 def listen_advice():
 
-    tags = request.form.get("listen_tags")
+    tags = request.form.getlist("listen_tags")
 
-    advice = db.execute("SELECT * FROM reply JOIN tags ON reply.reply_id = tags.reply_id WHERE tags.tag = ? ORDER BY reply_time", tags)
+    advice = db.execute("SELECT * FROM reply JOIN tags ON reply.reply_id = tags.reply_id WHERE tags.tag = ? ORDER BY reply_time", tags[0])
 
     return render_template("listen_advice.html", advice=advice)
