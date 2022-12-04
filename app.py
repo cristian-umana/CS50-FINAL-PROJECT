@@ -53,7 +53,8 @@ def tell_story():
 
         id = db.execute("SELECT post_id FROM post WHERE post_entry = ?", story)[0]["post_id"]
 
-        db.execute("INSERT INTO tags(post_id, tag) VALUES(?, ?)", id, tags)
+        for tag in tags: 
+            db.execute("INSERT INTO tags(post_id, tag) VALUES(?, ?)", id, tag)
 
         return render_template("tell_story.html", story=story)
 
@@ -92,6 +93,8 @@ def listen_story():
     tags = request.form.get("listen_tags")
 
     stories = db.execute("SELECT * FROM post JOIN tags ON post.post_id = tags.post_id WHERE tags.tag = ? ORDER BY post_time", tags)
+
+    #stories = db.execute("SELECT distinct post.post_id, post.post_entry, post.post_time FROM post JOIN tags ON post.post_id = tags.post_id WHERE tags.tag in (?) ORDER BY post_time", tags)
 
     return render_template("listen_story.html", stories=stories)
 
