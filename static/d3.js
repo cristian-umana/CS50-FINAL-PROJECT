@@ -1,2 +1,2 @@
 alert("hello!")
-alert("goodbye!")
+alert("goodbye! 2")
