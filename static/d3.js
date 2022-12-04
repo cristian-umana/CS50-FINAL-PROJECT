@@ -1,3 +1,3 @@
 function main() {
-    alert("hello!")
+    d3.selectAll("p").style("color", "red")
 }
