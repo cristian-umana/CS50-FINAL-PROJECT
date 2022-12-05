@@ -120,6 +120,7 @@ th {
 }
 
 .grid-area {
+    filter: blur(3px);
     width: 25%;
     margin-left: auto;
     margin-right: auto;
