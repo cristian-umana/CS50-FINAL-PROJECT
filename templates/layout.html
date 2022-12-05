@@ -34,14 +34,34 @@
 
 
     <body onload="main()">
-        <nav>
+        <nav class="navbar">
+
             <a class="nav-link" href="/">Home</a>
-            <a class="nav-link" href="/listen">Listen</a>
-            <a class="nav-link" href="/listen_advice">Listen Advice</a>
-            <a class="nav-link" href="/listen_story">Listen Story</a>
-            <a class="nav-link" href="/tell">Tell</a>
-            <a class="nav-link" href="/tell_story">Tell Story</a>
-            <a class="nav-link" href="/tell_advice">Tell Advice</a>
+
+            <div class="dropdown">
+                <a class="nav-link" href="/tell">
+                    <button class="dropbtn">Tell
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                </a>
+                <div class="dropdown-content">
+                    <a class="nav-link" href="/tell_story">Tell Story</a>
+                    <a class="nav-link" href="/tell_advice">Tell Advice</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a class="nav-link" href="/listen">
+                    <button class="dropbtn">Listen
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                </a>
+                <div class="dropdown-content">
+                    <a class="nav-link" href="/listen_advice">Listen Advice</a>
+                    <a class="nav-link" href="/listen_story">Listen Story</a>
+                </div>
+            </div>
+
         </nav>
 
         <div class="grid-area">
