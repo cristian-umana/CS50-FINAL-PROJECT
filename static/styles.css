@@ -1,3 +1,9 @@
+:root {
+    --grid-box: 15px;
+    --grid-padding: 2px;
+}
+
+
 
 h1 {
 	color: rgb(106, 164, 166);
@@ -31,6 +37,38 @@ nav {
     padding: 100px;
 }
 
+.sad {
+    display: inline-block;
+    width: var(--grid-box);
+    height: var(--grid-box);
+    padding: var(--grid-padding);
+    background-color: rgb(89, 120, 128);
+}
+
+.confused {
+    display: inline-block;
+    width: var(--grid-box);
+    height: var(--grid-box);
+    padding: var(--grid-padding);
+    background-color: rgb(84, 190, 42);
+}
+
+.love {
+    display: inline-block;
+    width: var(--grid-box);
+    height: var(--grid-box);
+    padding: var(--grid-padding);
+    background-color: rgb(179, 105, 158);
+}
+
+.mad {
+    display: inline-block;
+    width: var(--grid-box);
+    height: var(--grid-box);
+    padding: var(--grid-padding);
+    background-color: firebrick;
+}
+
 .btn {
     text-decoration: none;
     font-size: 80%;
@@ -54,6 +92,11 @@ table {
 
 th {
     padding: 20px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 

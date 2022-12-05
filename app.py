@@ -22,28 +22,38 @@ db = SQL("sqlite:///posts.db")
 @app.route("/")
 def launch():
 
-    return render_template("launch.html")
+    moodgraph = db.execute("SELECT * FROM tags")
+
+    return render_template("launch.html", moodgraph=moodgraph)
 
 @app.route("/listen")
 def listen():
+
+    moodgraph = db.execute("SELECT * FROM tags")
     
     stories = db.execute("SELECT * FROM post ORDER BY post_time")
 
     advice = db.execute("SELECT * FROM reply ORDER BY reply_time")
 
-    return render_template("listen.html", stories=stories, advice=advice)
+    return render_template("listen.html", stories=stories, advice=advice, moodgraph=moodgraph)
 
 
 @app.route("/tell")
 def tell():
 
-    return render_template("tell.html")
+    moodgraph = db.execute("SELECT * FROM tags")
+
+    return render_template("tell.html", moodgraph=moodgraph)
 
 
 @app.route("/tell_story", methods=["GET", "POST"])
 def tell_story():
 
+    moodgraph = db.execute("SELECT * FROM tags")
+
     if request.method == "POST":
+
+        moodgraph = db.execute("SELECT * FROM tags")
 
         story = request.form.get("tell_story")
 
@@ -56,16 +66,20 @@ def tell_story():
         for tag in tags: 
             db.execute("INSERT INTO tags(post_id, tag) VALUES(?, ?)", id, tag)
 
-        return render_template("tell_story.html", story=story)
+        return render_template("tell_story.html", story=story, moodgraph=moodgraph)
 
     else:
-        return render_template("tell_story.html")
+        return render_template("tell_story.html", moodgraph=moodgraph)
 
 
 @app.route("/tell_advice", methods=["GET", "POST"])
 def tell_advice():
 
+    moodgraph = db.execute("SELECT * FROM tags")
+
     if request.method == "POST":
+
+        moodgraph = db.execute("SELECT * FROM tags")
 
         story = request.form.get("tell_advice")
 
@@ -80,15 +94,17 @@ def tell_advice():
         for tag in tags: 
              db.execute("INSERT INTO tags(reply_id, tag) VALUES(?, ?)", id, tag)
 
-        return render_template("tell_advice.html", story=story)
+        return render_template("tell_advice.html", story=story, moodgraph=moodgraph)
 
     else:
-        return render_template("tell_advice.html")
+        return render_template("tell_advice.html", moodgraph=moodgraph)
 
 
 
 @app.route("/listen_story", methods=["GET", "POST"])
 def listen_story():
+
+    moodgraph = db.execute("SELECT * FROM tags")
 
     tags = request.form.get("listen_tags")
 
@@ -96,14 +112,16 @@ def listen_story():
 
     #stories = db.execute("SELECT distinct post.post_id, post.post_entry, post.post_time FROM post JOIN tags ON post.post_id = tags.post_id WHERE tags.tag in (?) ORDER BY post_time", tags)
 
-    return render_template("listen_story.html", stories=stories)
+    return render_template("listen_story.html", stories=stories, moodgraph=moodgraph)
 
 
 @app.route("/listen_advice", methods=["GET", "POST"])
 def listen_advice():
 
+    moodgraph = db.execute("SELECT * FROM tags")
+
     tags = request.form.get("listen_tags")
    
     advice = db.execute("SELECT * FROM reply JOIN tags ON reply.reply_id = tags.reply_id WHERE tags.tag = ? ORDER BY reply_time", tags)
 
-    return render_template("listen_advice.html", advice=advice)
+    return render_template("listen_advice.html", advice=advice, moodgraph=moodgraph)

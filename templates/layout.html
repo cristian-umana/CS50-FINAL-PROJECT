@@ -28,6 +28,8 @@
 
     </head>
 
+
+
     <body onload="main()">
         <nav>
             <a class="nav-link" href="/">Home</a>
@@ -38,6 +40,15 @@
             <a class="nav-link" href="/tell_story">Tell Story</a>
             <a class="nav-link" href="/tell_advice">Tell Advice</a>
         </nav>
+
+
+        <div class="center">
+        {% for i in moodgraph %}
+            <div class="{{ i.tag }}" role="img" alt="{{ i.tag }}"></div>
+        
+        {% endfor %}
+        </div>
+    
 
         <main class="container-fluid py-5 text-center">
             <!-- BLOCK FROM TEMPLATE FILES -->
