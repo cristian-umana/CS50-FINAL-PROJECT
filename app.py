@@ -22,9 +22,7 @@ db = SQL("sqlite:///posts.db")
 @app.route("/")
 def launch():
 
-    moodgraph = db.execute("SELECT * FROM tags")
-
-    return render_template("launch.html", moodgraph=moodgraph)
+    return render_template("launch.html")
 
 @app.route("/about")
 def about():
