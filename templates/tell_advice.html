@@ -11,22 +11,27 @@
 
 <form action="/tell_advice" method="post">
     <div class="mb-3">
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="tell_advice" name="tell_advice" placeholder="Share Some Advice" type="text">
+        <!-- <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="tell_advice" name="tell_advice" placeholder="Share Some Advice" type="text"> -->
 
         <textarea id="tell_advice" name="tell_advice" placeholder="Share Some Advice" type="text"></textarea>
 
         <br>
 
         <input type="radio" value="sad" id="sad" name="tell_tags"> 
-        <label for="tell_tags">sad</label>
+            <label for="tell_tags">sad</label>
         <input type="radio" value="confused" id="confused" name="tell_tags"> 
-        <label for="listen_tags">confused</label>
+            <label for="listen_tags">confused</label>
         <input type="radio" value="in love" id="in love" name="tell_tags"> 
-        <label for="listen_tags">in love</label>
+            <label for="listen_tags">in love</label>
         <input type="radio" value="v mad" id="v mad" name="tell_tags"> 
-        <label for="listen_tags">v mad</label>
+            <label for="listen_tags">v mad</label>
+
     </div>
-    <button class="btn btn-primary" type="submit">Send Your Feelings to The Ether!</button>
+
+    <div class="button_container">
+        <button class="btn btn-primary" type="submit">Send Your Feelings to The Ether!</button>
+    </div>
+    
 </form>
 
 {% endblock %}

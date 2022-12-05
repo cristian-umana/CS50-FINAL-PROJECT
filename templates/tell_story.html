@@ -29,9 +29,7 @@
 <form action="/tell_story" method="post">
     <div class="mb-3">
 
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="tell_story" name="tell_story" placeholder="Tell Me About It" type="text">
-
-        <textarea></textarea>
+        <textarea id="tell_story" name="tell_story" placeholder="Tell Me About It" type="text"></textarea>
 
         <br>
 
@@ -54,26 +52,24 @@
                 <span>Mad</span>
             </label>
         </div>
-
-
         
 -->
 
-    <input class="radio" type="radio" value="sad" id="tell_tags" name="tell_tags"> 
-        <label for="tell_tags">sad</label>
-    <input class="radio" type="radio" value="confused" id="tell_tags" name="tell_tags"> 
-        <label for="tell_tags">confused</label>
-    <input class="radio" type="radio" value="in love" id="tell_tags" name="tell_tags"> 
-        <label for="tell_tags">in love</label>
-    <input class="radio" type="radio" value="v mad" id="tell_tags" name="tell_tags"> 
-        <label for="tell_tags">v mad</label>
-
-
+        <input class="radio" type="radio" value="sad" id="tell_tags" name="tell_tags"> 
+            <label for="tell_tags">sad</label>
+        <input class="radio" type="radio" value="confused" id="tell_tags" name="tell_tags"> 
+            <label for="tell_tags">confused</label>
+        <input class="radio" type="radio" value="in love" id="tell_tags" name="tell_tags"> 
+            <label for="tell_tags">in love</label>
+        <input class="radio" type="radio" value="v mad" id="tell_tags" name="tell_tags"> 
+            <label for="tell_tags">v mad</label>
         
     </div>
+
     <div class="button_container">
         <button class="btn btn-primary" type="submit">Send Your Feelings to The Ether!</button>
     </div>
+
     <div>
         <p class="prompt"></p>
     </div>
