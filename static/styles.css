@@ -1,9 +1,8 @@
 :root {
     --grid-box: 15px;
     --grid-padding: 2px;
+    --background-color: rgb(0, 145, 255);
 }
-
-
 
 h1 {
 	color: rgb(106, 164, 166);
@@ -13,6 +12,7 @@ body {
     text-align: center;
     text-decoration: none;
     font-family: 'andale mono', monospace;
+    background-color: var(--background-color)
 }
 
 a {
@@ -22,13 +22,22 @@ a {
 nav {
     display: inline-block;
     text-decoration: none;
+    padding-bottom: 50px;
 }
 
 .nav-link {
     display: inline-block;
     text-decoration: none;
     font-size: 40%;
-    color: rgb(193, 192, 192);
+    color: rgb(255, 255, 255);
+}
+
+mb-3 {
+    padding: 40px;
+}
+
+#moodgraph {
+    padding-top: 100px;
 }
 
 .button_container {
@@ -37,12 +46,36 @@ nav {
     padding: 100px;
 }
 
+.btn {
+    text-decoration: none;
+    font-size: 80%;
+    font-style: bold;
+    color: #ffffff;
+    background: none;
+    border-color: none;
+    border-style: none;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    padding-bottom: 100px;
+    margin: 8px 0;
+    word-wrap: break-word;     
+    box-sizing: border-box;
+  }  
+
+label {
+    color: #ffffff;
+}
+
 .sad {
     display: inline-block;
     width: var(--grid-box);
     height: var(--grid-box);
+    border-width: 1px;
     padding: var(--grid-padding);
-    background-color: rgb(89, 120, 128);
+    background-color: rgb(136, 243, 255);
 }
 
 .confused {
@@ -50,7 +83,7 @@ nav {
     width: var(--grid-box);
     height: var(--grid-box);
     padding: var(--grid-padding);
-    background-color: rgb(84, 190, 42);
+    background-color: rgb(178, 242, 144);
 }
 
 .love {
@@ -58,7 +91,7 @@ nav {
     width: var(--grid-box);
     height: var(--grid-box);
     padding: var(--grid-padding);
-    background-color: rgb(179, 105, 158);
+    background-color: rgb(255, 148, 182);
 }
 
 .mad {
@@ -66,17 +99,7 @@ nav {
     width: var(--grid-box);
     height: var(--grid-box);
     padding: var(--grid-padding);
-    background-color: firebrick;
-}
-
-.btn {
-    text-decoration: none;
-    font-size: 80%;
-    font-style: bold;
-    color: #d44e4e;
-    background: none;
-    border-color: #d44e4e;
-    border-style: solid;
+    background-color: rgb(255, 69, 69);
 }
 
 .btn tag {

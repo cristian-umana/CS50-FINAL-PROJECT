@@ -9,20 +9,43 @@
 
 <!-- FORM TO INSERT TEXT INTO POST TABLE -->
 
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+    let submit = document.querySelectorAll('.btn btn-primary');
+
+    submit[i].addEventListener('click', function() {
+
+    submit[i].style.backgroundColor = 'White';
+
+    submit[i].parentElement.querySelector('.prompt').innerHTML = 'What Now?';
+
+    })
+});
+
+</script>
+
 <form action="/tell_story" method="post">
     <div class="mb-3">
+
         <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="tell_story" name="tell_story" placeholder="Tell Me About It" type="text">
-        <input type="checkbox" value="sad" id="tell_tags" name="tell_tags"> 
-        <label for="tell_tags">sad</label>
-        <input type="checkbox" value="confused" id="tell_tags" name="tell_tags"> 
-        <label for="tell_tags">confused</label>
-        <input type="checkbox" value="in love" id="tell_tags" name="tell_tags"> 
-        <label for="tell_tags">in love</label>
-        <input type="checkbox" value="v mad" id="tell_tags" name="tell_tags"> 
-        <label for="tell_tags">v mad</label>
+
+        <input class="checkbox" type="checkbox" value="sad" id="tell_tags" name="tell_tags"> 
+            <label for="tell_tags">sad</label>
+        <input class="checkbox" type="checkbox" value="confused" id="tell_tags" name="tell_tags"> 
+            <label for="tell_tags">confused</label>
+        <input class="checkbox" type="checkbox" value="in love" id="tell_tags" name="tell_tags"> 
+            <label for="tell_tags">in love</label>
+        <input class="checkbox" type="checkbox" value="v mad" id="tell_tags" name="tell_tags"> 
+            <label for="tell_tags">v mad</label>
+
     </div>
     <div class="button_container">
         <button class="btn btn-primary" type="submit">Send Your Feelings to The Ether!</button>
+    </div>
+    <div>
+        <p class="prompt"></p>
     </div>
 
 </form>
