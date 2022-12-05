@@ -26,6 +26,14 @@ def launch():
 
     return render_template("launch.html", moodgraph=moodgraph)
 
+@app.route("/about")
+def about():
+
+    moodgraph = db.execute("SELECT * FROM tags")
+
+    return render_template("about.html", moodgraph=moodgraph)
+
+
 @app.route("/listen")
 def listen():
 
@@ -43,7 +51,7 @@ def tell():
 
     moodgraph = db.execute("SELECT * FROM tags")
 
-    return render_template("tell.html", moodgraph=moodgraph)
+    return render_template("tell.html")
 
 
 @app.route("/tell_story", methods=["GET", "POST"])
