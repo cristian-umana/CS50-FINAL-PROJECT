@@ -9,15 +9,51 @@
 <!-- DISPLAYS LOG OF STORIES (POSTS) FILTERED BY TAGS -->
 
 <form action="/listen_story" method="post">
-    <div class="mb-3">
-        <input type="radio" value="sad" id="listen_tags" name="listen_tags"> 
-        <label for="listen_tags">sad</label>
-        <input type="radio" value="confused" id="listen_tags" name="listen_tags"> 
-        <label for="listen_tags">confused</label>
-        <input type="radio" value="in love" id="listen_tags" name="listen_tags"> 
-        <label for="listen_tags">in love</label>
-        <input type="radio" value="v mad" id="listen_tags" name="listen_tags"> 
-        <label for="listen_tags">v mad</label>
+    <div class="container">
+
+            <p>
+            <label>
+                <input class="radio" type="radio" value="joy" id="listen_tags" name="listen_tags"> 
+                <span>JOY</span>
+            </label>
+            <label>
+                <input class="radio" type="radio" value="gratitude" id="listen_tags" name="listen_tags"> 
+                <span>GRATITUDE</span>
+            </label>
+            <label>
+                <input class="radio" type="radio" value="anger" id="listen_tags" name="listen_tags"> 
+                <span>ANGER</span>
+            </label>
+            </p>
+    <br><p>
+            <label>
+                <input class="radio" type="radio" value="peace" id="listen_tags" name="listen_tags"> 
+                <span>PEACE</span>
+            </label>
+            <label>
+                <input class="radio" type="radio" value="confused" id="listen_tags" name="listen_tags"> 
+                <span>CONFUSED</span>
+            </label>
+            <label>
+                <input class="radio" type="radio" value="love" id="listen_tags" name="listen_tags"> 
+                <span>LOVE</span>
+            </label>
+            </p>
+    <br><p>
+            <label>
+                <input class="radio" type="radio" value="empty" id="listen_tags" name="listen_tags"> 
+                <span>EMPTY</span>
+            </label>
+            <label>
+                <input class="radio" type="radio" value="guilty" id="listen_tags" name="listen_tags"> 
+                <span>GUILTY</span>
+            </label>
+            <label>
+                <input class="radio" type="radio" value="sad" id="listen_tags" name="listen_tags"> 
+                <span>SAD</span>
+            </label>
+            </p>
+    
     </div>
     <button class="btn btn-primary" type="submit">See Stories</button>
 </form>

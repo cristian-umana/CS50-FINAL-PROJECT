@@ -99,16 +99,6 @@
 
     -->
 
-        <div class="grid-area">
-            <div class="grid center">
-                {% for i in moodgraph %}
-                
-                    <div class="moodbox" id="{{ i.tag }}" title="{{ i.tag }}"></div>
-                
-                {% endfor %}
-            </div>
-        </div>
-
         <main class="container-fluid py-5 text-center">
             <!-- BLOCK FROM TEMPLATE FILES -->
             {% block main %}{% endblock %}

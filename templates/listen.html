@@ -8,6 +8,18 @@
 {% block main %}
 
 <!-- TWO TABLES, LOG OF STORIES (POSTS) AND ADVICE (REPLIES) -->
+
+<div class="grid-area">
+    <div class="grid center">
+        {% for i in moodgraph %}
+        
+            <div class="moodbox" id="{{ i.tag }}" title="{{ i.tag }}"></div>
+        
+        {% endfor %}
+    </div>
+</div>
+
+
 <table>
     <thead>
         <tr>
