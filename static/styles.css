@@ -5,6 +5,8 @@
     --text-color: #ffffff;
     --highlight-color: rgb(0, 162, 255);
     --darker-blue: rgb(0, 127, 224);
+    --content-width: 20%;
+    --min-content-width: 250px;
 }
 
 h1 {
@@ -127,7 +129,7 @@ label span:before {
   /*display: flex;*/
   flex-shrink: 0;
   content: "";
-  background-color: #fff;
+  background-color: var(--darker-blue);
   width: 1.5em;
   height: 1.5em;
   border-radius: 50%;
@@ -148,82 +150,6 @@ label span:before {
   align-items: center;
   padding: 20px;
 }
-
-
-/*
-nav {
-    float: center;
-    display: inline;
-    text-decoration: none;
-    padding-bottom: 50px;
-}
-
-.nav-link {
-    float: center;
-    display: inline;
-    text-decoration: none;
-    font-size: 70%;
-    color: var(--text-color)
-}
-
-.navbar {
-    overflow: hidden;
-    font-size: 14pt;
-  }
-  
-.navbar a {
-float: left;
-color: var(--text-color);
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-}
-
-.dropdown {
-float: left;
-overflow: hidden;
-}
-
-.dropdown .dropbtn { 
-border: none;
-outline: none;
-color: var(--text-color);
-padding: 14px 16px;
-background-color: inherit;
-font-family: inherit;
-margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-background-color: var(--highlight-color);
-}
-
-.dropdown-content {
-display: none;
-position: absolute;
-min-width: 400px;
-top: 0;
-z-index: 1;
-}
-
-.dropdown-content a {
-float: none;
-color: var(--text-color);
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-text-align: left;
-}
-
-.dropdown-content a:hover {
-background-color: var(--highlight-color);
-}
-
-.dropdown:hover .dropdown-content {
-display: block;
-}
-
-*/
 
 mb-3 {
     padding: 40px;
@@ -260,7 +186,8 @@ input[type=text] {
 }  
 
 textarea {
-    width: 600px;
+    width: var(--content-width);
+    min-width: var(--min-content-width);
     height: 300px;
     outline: none;
     border-color: #ffffff;
@@ -286,20 +213,40 @@ label {
     padding: var(--grid-padding);
 }
 
-#sad {
-    background-color: rgb(136, 243, 255);
+#joy {
+    background-color: rgb(255, 196, 0);
+}
+
+#gratitude {
+    background-color: rgb(255, 119, 0);
+}
+
+#anger {
+    background-color: rgb(255, 69, 69);
+}
+
+#peace {
+    background-color: rgb(227, 155, 223);
 }
 
 #confused {
-    background-color: rgb(178, 242, 144);
+    background-color: rgb(155, 119, 97);
 }
 
 #love {
-    background-color: rgb(255, 148, 182);
+    background-color: rgb(206, 80, 217);
 }
 
-#mad {
-    background-color: rgb(255, 69, 69);
+#empty {
+    background-color: rgb(91, 172, 129);
+}
+
+#guilty {
+    background-color: rgb(91, 145, 79);
+}
+
+#sad {
+    background-color: rgb(26, 124, 185);
 }
 
 .btn tag {
@@ -314,7 +261,7 @@ table {
     border: 1px solid;
     border-radius: 30px;
     padding: 50px;
-    color: var(--color);
+    color: var(--text-color);
 }
 
 th {
@@ -328,20 +275,33 @@ th {
     margin-right: auto;
 }
 
-.grid-area {
-    /*filter: blur(1px);*/
-    width: 25%;
-    margin-left: auto;
-    margin-right: auto;
-}
+
+
+
 
 
 /* CREATING GRID FOR MOOD-GRAPH, REFERENCE: https://css-tricks.com/a-grid-of-logos-in-squares/ */
+
+
+.grid-area {
+    /*filter: blur(1px);*/
+    width: var(--content-width);
+    min-width: var(--min-content-width);
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15px, 1fr));
     grid-gap: 5px;
+  }
+
+  .grid2 {
+    filter: blur(5px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    grid-gap: 10px;
   }
 
   .grid > div {
