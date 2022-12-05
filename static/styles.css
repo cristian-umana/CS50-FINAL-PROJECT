@@ -4,6 +4,7 @@
     --background-color: rgb(0, 145, 255);
     --text-color: #ffffff;
     --highlight-color: rgb(0, 162, 255);
+    --blue-text: rgb(0, 127, 224);
 }
 
 h1 {
@@ -21,6 +22,135 @@ a {
     text-decoration: none;
 }
 
+
+/* DROP DOWN SOURCE : https://www.w3schools.com/css/css_dropdowns.asp */
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: rgba(255, 255, 255, 0);
+    color: var(--blue-text);
+    padding: 8px;
+    font-size: 12px;
+    min-width: 80px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--background-color);
+    min-width: 80px;
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: var(--blue-text);
+    font-size: 10px;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: var(--highlight-color);}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: var(--highlight-color);
+  }
+
+
+/* BUTTON SOURCE:     */
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+  /* Accessible outline */
+  /* Remove comment to use */
+  /*
+  	&:focus-within {
+  			outline: .125em solid $primary-color;
+  	}
+  */
+}
+label input {
+  position: absolute;
+  left: -9999px;
+}
+label input:checked + span {
+  background-color: #d6d6e5;
+}
+label input:checked + span:before {
+  box-shadow: inset 0 0 0 0.4375em #00005c;
+}
+label span {
+  /*display: flex;*/
+  align-items: center;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  transition: 0.25s ease;
+}
+label span:hover {
+  background-color: var(--highlight-color);
+}
+label span:before {
+  /*display: flex;*/
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em #00005c;
+}
+
+.container {
+  /*position: absolute;*/
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+/*
 nav {
     float: center;
     display: inline;
@@ -38,7 +168,7 @@ nav {
 
 .navbar {
     overflow: hidden;
-    font-size: 40%;
+    font-size: 14pt;
   }
   
 .navbar a {
@@ -92,6 +222,8 @@ background-color: var(--highlight-color);
 .dropdown:hover .dropdown-content {
 display: block;
 }
+
+*/
 
 mb-3 {
     padding: 40px;

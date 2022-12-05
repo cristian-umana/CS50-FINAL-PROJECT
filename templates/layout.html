@@ -29,12 +29,44 @@
 
         <title>{% block title %}{% endblock %}</title>
 
+<!-- DROP DOWN SOURCE : https://www.w3schools.com/css/css_dropdowns.asp -->
+
+        <div class="dropdown">
+            <a href="/"><button class="dropbtn">Home</button></a>
+        </div>
+
+        <div class="dropdown">
+            <a href="/about"><button class="dropbtn">About</button></a>
+        </div>
+
+        <div class="dropdown">
+            <a href="/listen"><button class="dropbtn">Tell</button></a>
+            <div class="dropdown-content">
+              <a href="/tell_story">Tell Story</a>
+              <a href="/tell_advice">Tell Advice</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="/listen"><button class="dropbtn">Listen</button></a>
+            <div class="dropdown-content">
+              <a href="/listen_story">Listen Story</a>
+              <a href="/listen_advice">Listen Advice</a>
+            </div>
+          </div>
+
+          <br><br><br><br><br>
+
     </head>
 
 
 
-    <body onload="main()">
+    <body>
 
+        
+
+
+        <!--
         <nav class="navbar">
 
             <a class="nav-link" href="/">Home</a>
@@ -64,6 +96,8 @@
             </div>
 
         </nav>
+
+    -->
 
         <div class="grid-area">
             <div class="grid center">
