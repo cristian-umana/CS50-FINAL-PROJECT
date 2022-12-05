@@ -2,7 +2,8 @@
     --grid-box: 15px;
     --grid-padding: 2px;
     --background-color: rgb(0, 145, 255);
-    --color: #ffffff;
+    --text-color: #ffffff;
+    --highlight-color: rgb(0, 162, 255);
 }
 
 h1 {
@@ -13,7 +14,7 @@ body {
     text-align: center;
     text-decoration: none;
     font-family: 'andale mono', monospace;
-    background-color: var(--background-color)
+    background-color: var(--background-color);
 }
 
 a {
@@ -32,7 +33,7 @@ nav {
     display: inline;
     text-decoration: none;
     font-size: 70%;
-    color: var(--color)
+    color: var(--text-color)
 }
 
 .navbar {
@@ -42,7 +43,7 @@ nav {
   
 .navbar a {
 float: left;
-color: white;
+color: var(--text-color);
 text-align: center;
 padding: 14px 16px;
 text-decoration: none;
@@ -56,7 +57,7 @@ overflow: hidden;
 .dropdown .dropbtn { 
 border: none;
 outline: none;
-color: white;
+color: var(--text-color);
 padding: 14px 16px;
 background-color: inherit;
 font-family: inherit;
@@ -64,20 +65,20 @@ margin: 0;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-background-color: rgb(0, 162, 255);
+background-color: var(--highlight-color);
 }
 
 .dropdown-content {
 display: none;
 position: absolute;
 min-width: 400px;
-bottom: 0;
+top: 0;
 z-index: 1;
 }
 
 .dropdown-content a {
 float: none;
-color: var(--color);
+color: var(--text-color);
 padding: 12px 16px;
 text-decoration: none;
 display: block;
@@ -85,7 +86,7 @@ text-align: left;
 }
 
 .dropdown-content a:hover {
-background-color: rgb(0, 162, 255);
+background-color: var(--highlight-color);
 }
 
 .dropdown:hover .dropdown-content {
@@ -110,10 +111,10 @@ mb-3 {
     text-decoration: none;
     font-size: 80%;
     font-style: bold;
-    color: #ffffff;
+    color: var(--text-color);
     background: none;
-    border-color: none;
-    border-style: none;
+    border-color: #ffffff;
+    border-radius: 20px;
 }
 
 input[type=text] {
@@ -123,38 +124,49 @@ input[type=text] {
     margin: 8px 0;
     word-wrap: break-word;     
     box-sizing: border-box;
-  }  
+    outline: none;
+}  
 
-label {
-    color: var(--color)
+textarea {
+    width: 600px;
+    height: 300px;
+    outline: none;
+    border-color: #ffffff;
+    border-radius: 10px;
+    background-color: var(--highlight-color);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    resize: none;
 }
 
-.sad {
+label {
+    color: var(--text-color)
+}
+
+.moodbox {
     width: var(--grid-box);
     height: var(--grid-box);
-    border-width: 1px;
+    border: 1px solid;
+    border-radius: 2px;
+    border-color: #ffffff;
     padding: var(--grid-padding);
+}
+
+#sad {
     background-color: rgb(136, 243, 255);
 }
 
-.confused {
-    width: var(--grid-box);
-    height: var(--grid-box);
-    padding: var(--grid-padding);
+#confused {
     background-color: rgb(178, 242, 144);
 }
 
-.love {
-    width: var(--grid-box);
-    height: var(--grid-box);
-    padding: var(--grid-padding);
+#love {
     background-color: rgb(255, 148, 182);
 }
 
-.mad {
-    width: var(--grid-box);
-    height: var(--grid-box);
-    padding: var(--grid-padding);
+#mad {
     background-color: rgb(255, 69, 69);
 }
 
@@ -185,7 +197,7 @@ th {
 }
 
 .grid-area {
-    filter: blur(3px);
+    /*filter: blur(1px);*/
     width: 25%;
     margin-left: auto;
     margin-right: auto;

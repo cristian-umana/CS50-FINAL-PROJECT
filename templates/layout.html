@@ -34,6 +34,7 @@
 
 
     <body onload="main()">
+
         <nav class="navbar">
 
             <a class="nav-link" href="/">Home</a>
@@ -67,7 +68,8 @@
         <div class="grid-area">
             <div class="grid center">
                 {% for i in moodgraph %}
-                    <div class="{{ i.tag }}" title="{{ i.tag }}"></div>
+                
+                    <div class="moodbox" id="{{ i.tag }}" title="{{ i.tag }}"></div>
                 
                 {% endfor %}
             </div>
