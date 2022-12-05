@@ -70,7 +70,6 @@ label {
 }
 
 .sad {
-    display: inline-block;
     width: var(--grid-box);
     height: var(--grid-box);
     border-width: 1px;
@@ -79,7 +78,6 @@ label {
 }
 
 .confused {
-    display: inline-block;
     width: var(--grid-box);
     height: var(--grid-box);
     padding: var(--grid-padding);
@@ -87,7 +85,6 @@ label {
 }
 
 .love {
-    display: inline-block;
     width: var(--grid-box);
     height: var(--grid-box);
     padding: var(--grid-padding);
@@ -95,7 +92,6 @@ label {
 }
 
 .mad {
-    display: inline-block;
     width: var(--grid-box);
     height: var(--grid-box);
     padding: var(--grid-padding);
@@ -111,6 +107,7 @@ table {
     margin-left: auto;
     margin-right: auto;
     width: 35%;
+    border: 2px solid;
 }
 
 th {
@@ -121,6 +118,51 @@ th {
     margin-left: auto;
     margin-right: auto;
 }
+
+.grid-area {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* CREATING GRID FOR MOOD-GRAPH, REFERENCE: https://css-tricks.com/a-grid-of-logos-in-squares/ */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15px, 1fr));
+    grid-gap: 5px;
+  }
+
+  .grid > div {
+    /*padding: 1rem;*/
+    display: grid;
+    place-items: center;
+  }
+  .grid > div::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    grid-area: 1/1/2/2;
+  }
+
+  /*
+  .grid > div img {
+    width: 100%;
+    grid-area: 1/1/2/2;
+  }
+  */
+  /*
+  body {
+    margin: 2rem;
+  }
+
+/* END OF REFERENCE */
+
+
+
+
+
 
 
 

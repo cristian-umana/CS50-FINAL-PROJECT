@@ -7,6 +7,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, width=device-width">
 
+        <!-- MATERIAL ICONS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
         <!-- D3 -->
         <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -41,14 +44,14 @@
             <a class="nav-link" href="/tell_advice">Tell Advice</a>
         </nav>
 
-
-        <div class="center">
-        {% for i in moodgraph %}
-            <div class="{{ i.tag }}" role="img" alt="{{ i.tag }}"></div>
-        
-        {% endfor %}
+        <div class="grid-area">
+            <div class="grid center">
+                {% for i in moodgraph %}
+                    <div class="{{ i.tag }}" title="{{ i.tag }}"></div>
+                
+                {% endfor %}
+            </div>
         </div>
-    
 
         <main class="container-fluid py-5 text-center">
             <!-- BLOCK FROM TEMPLATE FILES -->

@@ -31,15 +31,43 @@
 
         <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="tell_story" name="tell_story" placeholder="Tell Me About It" type="text">
 
-        <input class="checkbox" type="checkbox" value="sad" id="tell_tags" name="tell_tags"> 
-            <label for="tell_tags">sad</label>
-        <input class="checkbox" type="checkbox" value="confused" id="tell_tags" name="tell_tags"> 
-            <label for="tell_tags">confused</label>
-        <input class="checkbox" type="checkbox" value="in love" id="tell_tags" name="tell_tags"> 
-            <label for="tell_tags">in love</label>
-        <input class="checkbox" type="checkbox" value="v mad" id="tell_tags" name="tell_tags"> 
-            <label for="tell_tags">v mad</label>
+        <br>
 
+<!-- TRIED THE GOOGLE RADIO BUTTON THING
+        <div id="radios">
+            <label for="Sad" class="material-icons">
+                <input type="radio" name="mode" id="tell_story" value="Sad" checked/>
+                <span>Sad</span>
+            </label>								
+            <label for="Confused" class="material-icons">
+                <input type="radio" name="mode" id="tell_story" value="Confused" />
+                <span>Confused</span>
+            </label>
+            <label for="Love" class="material-icons">
+                <input type="radio" name="mode" id="tell_story" value="Love" />
+                <span>Love</span>
+            </label>
+            <label for="Mad" class="material-icons">
+                <input type="radio" name="mode" id="tell_story" value="Mad" />
+                <span>Mad</span>
+            </label>
+        </div>
+
+
+        
+-->
+
+    <input class="radio" type="radio" value="sad" id="tell_tags" name="tell_tags"> 
+        <label for="tell_tags">sad</label>
+    <input class="radio" type="radio" value="confused" id="tell_tags" name="tell_tags"> 
+        <label for="tell_tags">confused</label>
+    <input class="radio" type="radio" value="in love" id="tell_tags" name="tell_tags"> 
+        <label for="tell_tags">in love</label>
+    <input class="radio" type="radio" value="v mad" id="tell_tags" name="tell_tags"> 
+        <label for="tell_tags">v mad</label>
+
+
+        
     </div>
     <div class="button_container">
         <button class="btn btn-primary" type="submit">Send Your Feelings to The Ether!</button>
