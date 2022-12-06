@@ -12,11 +12,6 @@ app = Flask(__name__)
 # Custom filter
 #app.jinja_env.filters["usd"] = usd
 
-# Configure session to use filesystem (instead of signed cookies)
-#app.config["SESSION_PERMANENT"] = False
-#app.config["SESSION_TYPE"] = "filesystem"
-#Session(app)
-
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///posts.db")
 
@@ -33,11 +28,12 @@ def about():
 
     moodtable_raw = db.execute("SELECT tag FROM tags")
 
-    mt = []
-    for dic in moodtable_raw:
-        mt.append(dic["tag"])
+#Archived Implementation of PyPlot 
 
-    print(mt)
+    #mt = []
+    #for dic in moodtable_raw:
+    #    mt.append(dic["tag"])
+    #print(mt)
 
     return render_template("about.html", moodgraph=moodgraph)
 
@@ -45,7 +41,7 @@ def about():
 @app.route("/listen")
 def listen():
 
-    moodgraph = db.execute("SELECT * FROM tags")
+    moodgraph = db.execute("SELECT * FROM tags LIMIT 100")
     
     stories = db.execute("SELECT * FROM post ORDER BY post_time")
 
@@ -120,11 +116,11 @@ def tell_advice():
 @app.route("/listen_story", methods=["GET", "POST"])
 def listen_story():
 
-    moodgraph = db.execute("SELECT * FROM tags")
+    moodgraph = db.execute("SELECT * FROM tags LIMMIT 100")
 
     tags = request.form.get("listen_tags")
 
-    stories = db.execute("SELECT * FROM post JOIN tags ON post.post_id = tags.post_id WHERE tags.tag = ? ORDER BY post_time", tags)
+    stories = db.execute("SELECT * FROM post JOIN tags ON post.post_id = tags.post_id WHERE tags.tag = ? ORDER BY post_time DESC", tags)
 
     #stories = db.execute("SELECT distinct post.post_id, post.post_entry, post.post_time FROM post JOIN tags ON post.post_id = tags.post_id WHERE tags.tag in (?) ORDER BY post_time", tags)
 
@@ -134,10 +130,10 @@ def listen_story():
 @app.route("/listen_advice", methods=["GET", "POST"])
 def listen_advice():
 
-    moodgraph = db.execute("SELECT * FROM tags")
+    moodgraph = db.execute("SELECT * FROM tags JOIN  LIMMIT 100")
 
     tags = request.form.get("listen_tags")
    
-    advice = db.execute("SELECT * FROM reply JOIN tags ON reply.reply_id = tags.reply_id WHERE tags.tag = ? ORDER BY reply_time", tags)
+    advice = db.execute("SELECT * FROM reply JOIN tags ON reply.reply_id = tags.reply_id WHERE tags.tag = ? ORDER BY reply_time DESC", tags)
 
     return render_template("listen_advice.html", advice=advice, moodgraph=moodgraph)
