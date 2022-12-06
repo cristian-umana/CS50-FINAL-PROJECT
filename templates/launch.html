@@ -1,3 +1,4 @@
+<!--REFERENCING LAYOUT HTML -->
 {% extends "layout.html" %}
 
 {% block title %}
@@ -6,20 +7,20 @@ home
 
 {% block main %}
 
+    <!--LOGO IMAGE -->
     <img src="/static/LOGO.png" alt="tell me about it! logo" width="250"/>
     
     <br>
     <br>
     <br>
 
+
+    <!--TELL & LISTEN BUTTONS -->
     <div class="button_container">
         <div>
             <a href="/tell">
                 <button class="btn" id="btn_primary">TELL</button>
             </a>
-
-            <!--for space inbtwn buttons-->
-            <!-- <div style="display:inline;">&nbsp</div> -->
 
             <a href="/listen">
                 <button class="btn" id="btn_primary">LISTEN</button>
@@ -27,6 +28,8 @@ home
         </div>
 
         <br><br>
+
+        <!--ABOUT BUTTON -->
 
         <div>
             <a href="/about">

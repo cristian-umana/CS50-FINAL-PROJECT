@@ -1,16 +1,17 @@
+<!--REFERENCING LAYOUT HTML -->
 {% extends "layout.html" %}
 
+<!--PAGE TITLE -->
 {% block title %}
 share advice
 {% endblock %}
 
 {% block main %}
 
-<!-- FORM TO INSERT TEXT INTO REPLY TABLE -->
+<!-- FORM TO INSERT TEXT INTO ADVICE TABLE, CALLS JS FUNCTION TO VALIDATE FORM COMPLETION-->
 
 <form name="tell" action="/tell_advice" method="post" onsubmit="return validateTellAdvice()">
     <div class="mb-3">
-        <!-- <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="tell_advice" name="tell_advice" placeholder="Share Some Advice" type="text"> -->
 
         <textarea id="tell_advice" name="tell_advice" placeholder="Share Some Advice" type="text"></textarea>
 
@@ -62,6 +63,7 @@ share advice
         </div>
     </div>
 
+    <!-- SUBMIT BUTTON -->
     <div class="button_container">
         <button class="btn btn-primary" type="submit">Send Your Feelings to The Ether!</button>
     </div>
@@ -77,6 +79,7 @@ share advice
 <br>
 <br>
 
+<!-- LOGO -->
 <img src="/static/LOGO_white.png" alt="tell me about it! logo" width="100"/>
 
 {% endblock %}

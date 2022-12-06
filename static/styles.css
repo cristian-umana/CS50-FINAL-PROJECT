@@ -1,3 +1,4 @@
+/* DECLARING FILE WIDE VARIABLES */
 :root {
     --grid-box: 15px;
     --grid-padding: 2px;
@@ -23,8 +24,7 @@ a {
 
 
 /* DROP DOWN SOURCE : https://www.w3schools.com/css/css_dropdowns.asp */
-
-/* Style The Dropdown Button */
+/* STYLE OF DROP DOWN */
 .dropbtn {
     background-color: rgba(255, 255, 255, 0);
     color: var(--darker-blue);
@@ -35,13 +35,11 @@ a {
     cursor: pointer;
   }
   
-  /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
     display: inline-block;
   }
   
-  /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
     display: none;
     position: absolute;
@@ -50,7 +48,7 @@ a {
     z-index: 1;
   }
   
-  /* Links inside the dropdown */
+/* LINKS FOR DROPDOWN */
   .dropdown-content a {
     color: var(--darker-blue);
     font-size: 10px;
@@ -59,21 +57,59 @@ a {
     display: block;
   }
   
-  /* Change color of dropdown links on hover */
+/* DROPDOWN HOVER COLOR */
   .dropdown-content a:hover {background-color: var(--highlight-color);}
   
-  /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
     display: block;
   }
   
-  /* Change the background color of the dropdown button when the dropdown content is shown */
+/* DROPDOWN HOVER COLOR */
   .dropdown:hover .dropbtn {
     background-color: var(--highlight-color);
   }
 
 
-/* BUTTON SOURCE:     */
+/* TABLE STYLING */
+
+  .table-wrapper {
+    display: flex;
+    width: 40%;
+    min-width: 500px;
+  }
+  
+  table {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: var(--table-width);
+    border: 1px solid;
+    border-radius: 30px;
+    padding: 50px;
+    color: var(--text-color);
+    table-layout: fixed;
+  }
+  
+  th {
+    text-align: center;
+    width: calc((var(--table-width)) / 3);
+    border-bottom: 1px solid white;
+  }
+  
+  td {
+    padding-top: 5px;
+    border-bottom: 1px solid var(--darker-blue);
+  }
+  
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+
+/* TAG BUTTONS - SOURCE: https://www.sliderrevolution.com/resources/styling-radio-buttons/    */
 
 *,
 *:after,
@@ -87,41 +123,6 @@ form {
   flex-direction: column;
 }
 
-.table-wrapper {
-  display: flex;
-  width: 40%;
-  min-width: 500px;
-}
-
-table {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: var(--table-width);
-  border: 1px solid;
-  border-radius: 30px;
-  padding: 50px;
-  color: var(--text-color);
-  table-layout: fixed;
-}
-
-th {
-  /*display: inline;*/
-  text-align: center;
-  width: calc((var(--table-width)) / 3);
-  border-bottom: 1px solid white;
-}
-
-td {
-  padding-top: 5px;
-  border-bottom: 1px solid var(--darker-blue);
-}
-
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 label {
   display: flex;
   cursor: pointer;
@@ -129,13 +130,6 @@ label {
   position: relative;
   overflow: hidden;
   margin-bottom: 0.375em;
-  /* Accessible outline */
-  /* Remove comment to use */
-  /*
-  	&:focus-within {
-  			outline: .125em solid $primary-color;
-  	}
-  */
 }
 
 label input {
@@ -165,7 +159,6 @@ label span:hover {
 }
 
 label span:before {
-  /*display: flex;*/
   flex-shrink: 0;
   content: "";
   background-color: var(--darker-blue);
@@ -178,7 +171,6 @@ label span:before {
 }
  
 .container {
-  /*position: absolute;*/
   top: 0;
   left: 0;
   right: 0;
@@ -194,9 +186,9 @@ mb-3 {
     padding: 40px;
 }
 
-#moodgraph {
-    padding-top: 100px;
-}
+
+
+/* BUTTON PULSE REFERENCE: https://www.florin-pop.com/blog/2019/03/css-pulse-effect/ */
 
 .button_container {
     text-decoration: none;
@@ -268,6 +260,8 @@ textarea {
     animation-iteration-count: 3;
 }
 
+/* ANIMATION */
+
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
@@ -282,7 +276,13 @@ textarea {
   }
 }
 
-/* reference: https://www.florin-pop.com/blog/2019/03/css-pulse-effect/ */
+
+
+/* MOOD GRAPH STYLING */
+
+#moodgraph {
+  padding-top: 100px;
+}
 
 label {
     color: var(--text-color)
@@ -333,11 +333,11 @@ label {
     background-color: #9CDAEB;
 }
 
+
+
 /* CREATING GRID FOR MOOD-GRAPH, REFERENCE: https://css-tricks.com/a-grid-of-logos-in-squares/ */
 
-
 .grid-area {
-    /*filter: blur(1px);*/
     width: var(--content-width);
     min-width: 430px;
     max-width: 600px;
@@ -352,7 +352,6 @@ label {
   }
 
   .grid > div {
-    /*padding: 1rem;*/
     display: grid;
     place-items: center;
   }
@@ -363,17 +362,3 @@ label {
     grid-area: 1/1/2/2;
   }
 
-  /*
-  .grid > div img {
-    width: 100%;
-    grid-area: 1/1/2/2;
-  }
-  */
-  /*
-  body {
-    margin: 2rem;
-  }
-
-/* END OF REFERENCE */
-
-/* CURSOR REFERENCE: http://ahrengot.com/tutorials/greensock-javascript-animation*/

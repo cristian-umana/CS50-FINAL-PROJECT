@@ -1,15 +1,18 @@
+<!--REFERENCING LAYOUT HTML -->
 {% extends "layout.html" %}
 
+<!--PAGE TITLE -->
 {% block title %}
 listen to stories
 {% endblock %}
 
 {% block main %}
 
-<!-- DISPLAYS LOG OF STORIES (POSTS) FILTERED BY TAGS -->
+<!-- DISPLAYS MOOD GRAPH -->
 
 <div class="grid-area">
     <div class="grid center">
+        <!-- LOOPS THROUGH EACH ITEM IN QUERY AND FOR EACH ITEM MAKES A SQUARE THAT IS COLORED AND TITLED BASED ON THE TAG -->
         {% for i in moodgraph %}
         
             <div class="moodbox" id="{{ i.tag }}" title="{{ i.tag }}"></div>
@@ -20,6 +23,7 @@ listen to stories
 
 <br><br>
 
+<!-- FORM TO DETERMINE WHICH TAG THE USER WOULD LIKE TO FILTER BY -->
 <form action="/listen_story" method="post">
     <div class="container">
 
@@ -68,6 +72,8 @@ listen to stories
     
     </div>
 
+
+    <!-- SUBMIT BUTTON -->
     <div class="button_container">
         <button class="btn btn-primary" type="submit">See Stories</button>
     </div>
@@ -76,6 +82,7 @@ listen to stories
 
 <br>
 
+<!-- DISPLAYS LOG OF STORIES FILTERED BY TAGS -->
 <table style="min-width: 500px" class="center">
     <thead>
         <tr>
@@ -85,6 +92,7 @@ listen to stories
         </tr>
     </thead>
     <tbody>
+        <!-- LOOPS THROUGH EACH ITEM IN QUERY AND FOR EACH ITEM MAKES A NEW TABLE ROW AND ADDS INFO ON DATE/TIME, TEXT OF STORY, AND TAG -->
         {% for i in stories %}
         <tr>
             <td>{{ i.post_time }}</td>
@@ -104,6 +112,7 @@ listen to stories
 <br>
 <br>
 
+<!-- LOGO -->
 <img src="/static/LOGO_white.png" alt="tell me about it! logo" width="100"/>
 
 {% endblock %}

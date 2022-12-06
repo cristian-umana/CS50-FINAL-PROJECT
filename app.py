@@ -135,7 +135,7 @@ def listen_story():
 def listen_advice():
 
     #query getting info from post.db, "tags" table
-    moodgraph = db.execute("SELECT * FROM tags JOIN  LIMIT 100")
+    moodgraph = db.execute("SELECT * FROM tags LIMIT 100")
 
     #variable storing tag entry
     tags = request.form.get("listen_tags")

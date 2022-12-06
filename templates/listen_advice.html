@@ -1,15 +1,19 @@
+<!--REFERENCING LAYOUT HTML -->
 {% extends "layout.html" %}
 
+<!--PAGE TITLE -->
 {% block title %}
 listen to advice
 {% endblock %}
 
 {% block main %}
 
-<!-- DISPLAYS LOG OF ADVICE (REPLIES) FILTERED BY TAGS -->
+<!-- DISPLAYS MOOD GRAPH -->
 
 <div class="grid-area">
     <div class="grid center">
+
+        <!-- LOOPS THROUGH EACH ITEM IN QUERY AND FOR EACH ITEM MAKES A SQUARE THAT IS COLORED AND TITLED BASED ON THE TAG -->
         {% for i in moodgraph %}
         
             <div class="moodbox" id="{{ i.tag }}" title="{{ i.tag }}"></div>
@@ -20,6 +24,8 @@ listen to advice
 
 <br><br>
 
+
+<!-- FORM TO DETERMINE WHICH TAG THE USER WOULD LIKE TO FILTER BY -->
 <form action="/listen_advice" method="post">
     <div class="container">
             <p>
@@ -65,7 +71,9 @@ listen to advice
             </label>
             </p>
     </div>
-
+    
+    
+    <!-- SUBMIT BUTTON -->
     <div class="button_container">
         <button class="btn btn-primary" type="submit">See Advice</button>
     </div>
@@ -74,6 +82,8 @@ listen to advice
 
 <br>
 
+
+<!-- DISPLAYS LOG OF ADVICE FILTERED BY TAGS -->
 <table style="min-width: 500px" class="center">
     <thead>
         <tr>
@@ -83,6 +93,7 @@ listen to advice
         </tr>
     </thead>
     <tbody>
+        <!-- LOOPS THROUGH EACH ITEM IN QUERY AND FOR EACH ITEM MAKES A NEW TABLE ROW AND ADDS INFO ON DATE/TIME, TEXT OF ADVICE, AND TAG -->
         {% for i in advice %}
         <tr id=git>
             <td>{{ i.reply_time }}</td>
@@ -102,6 +113,8 @@ listen to advice
 <br>
 <br>
 
+
+<!-- LOGO -->
 <img src="/static/LOGO_white.png" alt="tell me about it! logo" width="100"/>
 
 

@@ -1,13 +1,14 @@
+<!--REFERENCING LAYOUT HTML -->
 {% extends "layout.html" %}
 
+<!--PAGE TITLE -->
 {% block title %}
 listen
 {% endblock %}
 
 {% block main %}
 
-<!-- TWO TABLES, LOG OF STORIES (POSTS) AND ADVICE (REPLIES) -->
-
+<!-- DISPLAYS MOOD GRAPH -->
 <div class="grid-area">
     <div class="grid center">
         {% for i in moodgraph %}
@@ -20,6 +21,7 @@ listen
 
 <br><br>
 
+<!-- BUTTON FOR USERS FOR FILTER EITHER STORIES OR ADVICE -->
 <div class="button_container">
     <a href="/listen_story">
         <button class="btn btn-primary" type="submit">FILTER STORIES</button>
@@ -31,20 +33,19 @@ listen
 
 <br><br>
 
+<!-- TWO TABLES, LOG OF STORIES (POSTS) AND ADVICE (REPLIES) -->
 <div class="table-wrapper center">
 
             <table>
                 <thead>
                     <tr>
-                    <!-- OLD IMPLEMENTATION OF DATE TIME <th>DATE</th> -->
                     <th>STORIES</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- LOOPS THROUGH EACH ITEM IN QUERY AND FOR EACH ITEM MAKES A NEW TABLE ROW AND ADDS INFO OF DATE/TIME AS ALT TEXT (TITLE) AND TEXT OF STORY/ADVICE -->
                     {% for i in stories %}
                     <tr>
-                        <!-- OLD IMPLEMENTATION OF DATE TIME -->
-                        <!-- <td>{{ i.post_time }}</td> -->
                         <td title="POSTED ON: {{ i.post_time }}">{{ i.post_entry }}</td>
                     </tr>
                     {% endfor %}
@@ -54,15 +55,13 @@ listen
             <table>
                 <thead>
                     <tr>
-                    <!-- OLD IMPLEMENTATION OF DATE TIME <th>DATE</th> -->
                     <th>ADVICE</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- LOOPS THROUGH EACH ITEM IN QUERY AND FOR EACH ITEM MAKES A NEW TABLE ROW AND ADDS INFO OF DATE/TIME AS ALT TEXT (TITLE) AND TEXT OF STORY/ADVICE -->
                     {% for i in advice %}
                     <tr>
-                        <!-- OLD IMPLEMENTATION OF DATE TIME -->
-                        <!-- <td>{{ i.reply_time }}</td> -->
                         <td title="POSTED ON: {{ i.reply_time }}">{{ i.reply_entry }}</td>
                     </tr>
                     {% endfor %}
@@ -75,7 +74,7 @@ listen
 <br>
 <br>
 
-
+<!-- LOGO -->
 <img src="/static/LOGO_white.png" alt="tell me about it! logo" width="100"/>
 
 {% endblock %}
