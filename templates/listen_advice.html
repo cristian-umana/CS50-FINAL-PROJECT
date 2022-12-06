@@ -8,6 +8,18 @@ listen to advice
 
 <!-- DISPLAYS LOG OF ADVICE (REPLIES) FILTERED BY TAGS -->
 
+<div class="grid-area">
+    <div class="grid center">
+        {% for i in moodgraph %}
+        
+            <div class="moodbox" id="{{ i.tag }}" title="{{ i.tag }}"></div>
+        
+        {% endfor %}
+    </div>
+</div>
+
+<br><br>
+
 <form action="/listen_advice" method="post">
     <div class="container">
             <p>
@@ -62,7 +74,7 @@ listen to advice
 
 <br>
 
-<table>
+<table style="min-width: 500px" class="center">
     <thead>
         <tr>
         <th>DATE</th>
@@ -72,7 +84,7 @@ listen to advice
     </thead>
     <tbody>
         {% for i in advice %}
-        <tr>
+        <tr id="{{ i.tag }}-text">
             <td>{{ i.reply_time }}</td>
             <td>{{ i.reply_entry }}</td>
             <td>{{ i.tag }}</td>

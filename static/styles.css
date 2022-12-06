@@ -5,7 +5,7 @@
     --text-color: #ffffff;
     --highlight-color: rgb(0, 162, 255);
     --darker-blue: rgb(0, 117, 207);
-    --content-width: 20%;
+    --content-width: 40%;
     --min-content-width: 250px;
     --table-width: 50%;
 }
@@ -89,6 +89,8 @@ form {
 
 .table-wrapper {
   display: flex;
+  width: 40%;
+  min-width: 500px;
 }
 
 table {
@@ -327,14 +329,14 @@ label {
     background-color: rgb(26, 124, 185);
 }
 
-
 /* CREATING GRID FOR MOOD-GRAPH, REFERENCE: https://css-tricks.com/a-grid-of-logos-in-squares/ */
 
 
 .grid-area {
     /*filter: blur(1px);*/
     width: var(--content-width);
-    min-width: var(--min-content-width);
+    min-width: 430px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
