@@ -87,6 +87,10 @@ form {
   flex-direction: column;
 }
 
+.table-wrapper {
+  display: flex;
+}
+
 table {
   display: block;
   margin-left: auto;
