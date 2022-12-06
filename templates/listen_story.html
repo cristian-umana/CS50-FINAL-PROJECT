@@ -8,6 +8,18 @@ listen to stories
 
 <!-- DISPLAYS LOG OF STORIES (POSTS) FILTERED BY TAGS -->
 
+<div class="grid-area">
+    <div class="grid center">
+        {% for i in moodgraph %}
+        
+            <div class="moodbox" id="{{ i.tag }}" title="{{ i.tag }}"></div>
+        
+        {% endfor %}
+    </div>
+</div>
+
+<br><br>
+
 <form action="/listen_story" method="post">
     <div class="container">
 
@@ -64,12 +76,12 @@ listen to stories
 
 <br>
 
-<table class="center">
+<table style="min-width: 500px" class="center">
     <thead>
         <tr>
         <th>DATE</th>
-        <th>STORY</th>
-        <th>TAGS</th>
+        <th>STORIES</th>
+        <th>TAG</th>
         </tr>
     </thead>
     <tbody>
