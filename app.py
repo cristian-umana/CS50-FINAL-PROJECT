@@ -67,11 +67,11 @@ def tell_story():
 
     moodgraph = db.execute("SELECT * FROM tags")
 
+    story = request.form.get("tell_story")
+
     if request.method == "POST":
 
         moodgraph = db.execute("SELECT * FROM tags")
-
-        story = request.form.get("tell_story")
 
         tags = request.form.getlist("tell_tags")
 
@@ -82,10 +82,10 @@ def tell_story():
         for tag in tags: 
             db.execute("INSERT INTO tags(post_id, tag) VALUES(?, ?)", id, tag)
 
-        return render_template("tell_story.html", story=story, moodgraph=moodgraph)
+        return redirect("/listen")
 
     else:
-        return render_template("tell_story.html", moodgraph=moodgraph)
+        return render_template("tell_story.html", story=story, moodgraph=moodgraph)
 
 
 @app.route("/tell_advice", methods=["GET", "POST"])
@@ -93,11 +93,11 @@ def tell_advice():
 
     moodgraph = db.execute("SELECT * FROM tags")
 
+    story = request.form.get("tell_advice")
+
     if request.method == "POST":
 
         moodgraph = db.execute("SELECT * FROM tags")
-
-        story = request.form.get("tell_advice")
 
         tags = request.form.getlist('tell_tags')
 
@@ -110,10 +110,10 @@ def tell_advice():
         for tag in tags: 
              db.execute("INSERT INTO tags(reply_id, tag) VALUES(?, ?)", id, tag)
 
-        return render_template("tell_advice.html", story=story, moodgraph=moodgraph)
+        return redirect("/listen")
 
     else:
-        return render_template("tell_advice.html", moodgraph=moodgraph)
+        return render_template("tell_advice.html", story=story, moodgraph=moodgraph)
 
 
 
