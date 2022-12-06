@@ -1,10 +1,12 @@
+import matplotlib.pyplot as plt
+import numpy as np
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 
 #hello hi
-# Configure application
+# Configure applicationfasl
 app = Flask(__name__)
 
 # Custom filter
@@ -28,6 +30,14 @@ def launch():
 def about():
 
     moodgraph = db.execute("SELECT * FROM tags")
+
+    moodtable_raw = db.execute("SELECT tag FROM tags")
+
+    mt = []
+    for dic in moodtable_raw:
+        mt.append(dic["tag"])
+
+    print(mt)
 
     return render_template("about.html", moodgraph=moodgraph)
 
