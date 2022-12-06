@@ -1,8 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    <!-- PAGE TITLE -->
-    LISTEN
+listen
 {% endblock %}
 
 {% block main %}
@@ -21,45 +20,50 @@
 
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<table>
-    <thead>
-        <tr>
-        <th>DATE</th>
-        <th>STORY</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for i in stories %}
-        <tr>
-            <td>{{ i.post_time }}</td>
-            <td>{{ i.post_entry }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<table style="border: 0px;">
+    <tr>
+        <td style="display:inline;">
+            <table>
+                <thead>
+                    <tr>
+                    <!-- OLD IMPLEMENTATION OF DATE TIME <th>DATE</th> -->
+                    <th>STORY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in stories %}
+                    <tr>
+                        <!-- OLD IMPLEMENTATION OF DATE TIME -->
+                        <!-- <td>{{ i.post_time }}</td> -->
+                        <td title="POSTED ON: {{ i.post_time }}">{{ i.post_entry }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </td>
 
-<table>
-    <thead>
-        <tr>
-        <th>DATE</th>
-        <th>ADVICE</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for i in advice %}
-        <tr>
-            <td>{{ i.reply_time }}</td>
-            <td>{{ i.reply_entry }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
+        <td style="display:inline;">
+            <table>
+                <thead>
+                    <tr>
+                    <!-- OLD IMPLEMENTATION OF DATE TIME <th>DATE</th> -->
+                    <th>ADVICE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in advice %}
+                    <tr>
+                        <!-- OLD IMPLEMENTATION OF DATE TIME -->
+                        <!-- <td>{{ i.reply_time }}</td> -->
+                        <td title="POSTED ON: {{ i.reply_time }}">{{ i.reply_entry }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </td>
+
+    </tr>
 </table>
 
 <br>

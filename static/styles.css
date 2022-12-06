@@ -4,7 +4,7 @@
     --background-color: rgb(0, 145, 255);
     --text-color: #ffffff;
     --highlight-color: rgb(0, 162, 255);
-    --darker-blue: rgb(0, 127, 224);
+    --darker-blue: rgb(0, 117, 207);
     --content-width: 20%;
     --min-content-width: 250px;
     --table-width: 50%;
@@ -30,7 +30,7 @@ a {
     color: var(--darker-blue);
     padding: 8px;
     font-size: 12px;
-    min-width: 80px;
+    min-width: 90px;
     border: none;
     cursor: pointer;
   }
@@ -46,7 +46,7 @@ a {
     display: none;
     position: absolute;
     background-color: var(--background-color);
-    min-width: 80px;
+    min-width: 90px;
     z-index: 1;
   }
   
@@ -103,7 +103,12 @@ th {
   /*display: inline;*/
   text-align: center;
   width: calc((var(--table-width)) / 3);
+  border-bottom: 1px solid white;
+}
 
+td {
+  padding-top: 5px;
+  border-bottom: 1px solid var(--darker-blue);
 }
 
 .center {
