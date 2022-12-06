@@ -8,7 +8,7 @@ tell a story
 
 <!-- FORM TO INSERT TEXT INTO POST TABLE -->
 
-<form action="/tell_story" method="post">
+<form name="tell2" action="/tell_story" method="post" onsubmit="return validateTellStory()">
     <div class="mb-3">
 
         <textarea id="tell_story" name="tell_story" placeholder="Tell Me About It" type="text"></textarea>
