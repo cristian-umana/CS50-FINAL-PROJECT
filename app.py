@@ -9,12 +9,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 # Configure applicationfasl
 app = Flask(__name__)
 
-# Custom filter
-#app.jinja_env.filters["usd"] = usd
-
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///posts.db")
-
 
 @app.route("/")
 def launch():
@@ -24,18 +20,16 @@ def launch():
 @app.route("/about")
 def about():
 
-    moodgraph = db.execute("SELECT * FROM tags")
-
-    moodtable_raw = db.execute("SELECT tag FROM tags")
-
 #Archived Implementation of PyPlot 
+
+    #moodtable_raw = db.execute("SELECT tag FROM tags")
 
     #mt = []
     #for dic in moodtable_raw:
     #    mt.append(dic["tag"])
     #print(mt)
 
-    return render_template("about.html", moodgraph=moodgraph)
+    return render_template("about.html")
 
 
 @app.route("/listen")
@@ -43,17 +37,15 @@ def listen():
 
     moodgraph = db.execute("SELECT * FROM tags LIMIT 100")
     
-    stories = db.execute("SELECT * FROM post ORDER BY post_time")
+    stories = db.execute("SELECT * FROM post ORDER BY post_time DESC")
 
-    advice = db.execute("SELECT * FROM reply ORDER BY reply_time")
+    advice = db.execute("SELECT * FROM reply ORDER BY reply_time DESC")
 
     return render_template("listen.html", stories=stories, advice=advice, moodgraph=moodgraph)
 
 
 @app.route("/tell")
 def tell():
-
-    moodgraph = db.execute("SELECT * FROM tags")
 
     return render_template("tell.html")
 
@@ -97,8 +89,6 @@ def tell_advice():
 
         tags = request.form.getlist('tell_tags')
 
-        #print(tags)
-
         db.execute("INSERT INTO reply(reply_entry) VALUES(?)", request.form.get("tell_advice"))
 
         id = db.execute("SELECT reply_id FROM reply WHERE reply_entry = ?", story)[0]["reply_id"]
@@ -121,8 +111,6 @@ def listen_story():
     tags = request.form.get("listen_tags")
 
     stories = db.execute("SELECT * FROM post JOIN tags ON post.post_id = tags.post_id WHERE tags.tag = ? ORDER BY post_time DESC", tags)
-
-    #stories = db.execute("SELECT distinct post.post_id, post.post_entry, post.post_time FROM post JOIN tags ON post.post_id = tags.post_id WHERE tags.tag in (?) ORDER BY post_time", tags)
 
     return render_template("listen_story.html", stories=stories, moodgraph=moodgraph)
 
