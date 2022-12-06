@@ -8,23 +8,6 @@ tell a story
 
 <!-- FORM TO INSERT TEXT INTO POST TABLE -->
 
-<script>
-
-    document.addEventListener('DOMContentLoaded', function() {
-
-    let submit = document.querySelectorAll('.btn btn-primary');
-
-    submit[i].addEventListener('click', function() {
-
-    submit[i].style.backgroundColor = 'White';
-
-    submit[i].parentElement.querySelector('.prompt').innerHTML = 'What Now?';
-
-    })
-});
-
-</script>
-
 <form action="/tell_story" method="post">
     <div class="mb-3">
 
@@ -80,10 +63,6 @@ tell a story
 
     <div class="button_container">
         <button class="btn btn-primary" type="submit">Send Your Feelings to The Ether!</button>
-    </div>
-
-    <div>
-        <p class="prompt"></p>
     </div>
 
 </form>
