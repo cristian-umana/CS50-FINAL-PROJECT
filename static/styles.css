@@ -299,39 +299,39 @@ label {
 }
 
 #joy {
-    background-color: rgb(255, 196, 0);
+    background-color: #FFD535;
 }
 
 #gratitude {
-    background-color: rgb(255, 119, 0);
+    background-color: #F79331;
 }
 
 #anger {
-    background-color: rgb(255, 69, 69);
+    background-color: #F0484A;
 }
 
 #peace {
-    background-color: rgb(227, 155, 223);
+    background-color: #C8B2D6;
 }
 
 #confused {
-    background-color: rgb(155, 119, 97);
+    background-color: #B7D98D;
 }
 
 #love {
-    background-color: rgb(206, 80, 217);
+    background-color: #F493B5;
 }
 
 #empty {
-    background-color: rgb(91, 172, 129);
+    background-color: #CCD7DD;
 }
 
 #guilty {
-    background-color: rgb(91, 145, 79);
+    background-color: #4EB3E5;
 }
 
 #sad {
-    background-color: rgb(26, 124, 185);
+    background-color: #9CDAEB;
 }
 
 /* CREATING GRID FOR MOOD-GRAPH, REFERENCE: https://css-tricks.com/a-grid-of-logos-in-squares/ */
