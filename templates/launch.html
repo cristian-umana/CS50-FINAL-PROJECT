@@ -6,8 +6,6 @@ home
 
 {% block main %}
 
-<div class="button_container">
-
     <img src="/static/LOGO.png" alt="tell me about it! logo" width="250"/>
     
     <br>
@@ -19,18 +17,26 @@ home
     <br>
 
     <div class="button_container">
-        <a href="/tell">
-            <button class="btn" id="btn_primary">TELL</button>
-        </a>
+        <div>
+            <a href="/tell">
+                <button class="btn" id="btn_primary">TELL</button>
+            </a>
 
+            <!--for space inbtwn buttons-->
+            <!-- <div style="display:inline;">&nbsp</div> -->
 
-        <!--for space inbtwn buttons-->
-        <!-- <div style="display:inline;">&nbsp</div> -->
+            <a href="/listen">
+                <button class="btn" id="btn_primary">LISTEN</button>
+            </a>
+        </div>
 
-        <a href="/listen">
-            <button class="btn" id="btn_primary">LISTEN</button>
-        </a>
+        <br><br>
+
+        <div>
+            <a href="/about">
+                <button class="btn" id="about_btn">NOT SURE WHERE TO START?</button>
+            </a>
+        </div>
     </div>
-</div>
 
 {% endblock %}

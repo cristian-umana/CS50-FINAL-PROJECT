@@ -226,6 +226,11 @@ mb-3 {
   animation: pulse 2s infinite;
 }
 
+#about_btn {
+  font-size: 77%;
+  animation: pulse 2s infinite;
+}
+
 input[type=text] {
     width: 100%;
     padding: 12px 20px;
