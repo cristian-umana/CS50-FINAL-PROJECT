@@ -217,6 +217,15 @@ mb-3 {
     animation-iteration-count: 3;
 }
 
+#btn_primary {
+  font-size: 120%;
+  font-weight: 200;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 50px;
+  animation: pulse 2s infinite;
+}
+
 input[type=text] {
     width: 100%;
     padding: 12px 20px;
